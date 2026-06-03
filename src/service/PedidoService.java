@@ -14,11 +14,11 @@ public class PedidoService {
     }
 
     public void executarPedido(String tipoAcao, Pedido pedido){
-        if(tipoAcao.equalsIgnoreCase("Pagar")){
+        if(tipoAcao.equalsIgnoreCase("PAGAR")){
             pagamentoService.processarPagamento(pedido);
-        }else if(tipoAcao.equalsIgnoreCase("Preparar")){
+        }else if(tipoAcao.equalsIgnoreCase("PREPARAR")){
             cozinhaService.iniciarPreparo(pedido);
-        }else if(tipoAcao.equalsIgnoreCase("Cancelar")){
+        }else if(tipoAcao.equalsIgnoreCase("CANCELAR")){
             estoqueService.cancelarEVoltarAoEstoque(pedido);
         }else{
             System.out.println("Ação invalida");
